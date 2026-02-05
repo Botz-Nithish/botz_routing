@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 256px;
+            height: 256px;
+            background: transparent;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lane-container {
+            position: relative;
+            width: 256px;
+            height: 256px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Tire tracks / lane segment */
+        .lane {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 180px;
+        }
+        
+        /* Individual tire track */
+        .track {
+            width: 28px;
+            height: 230px;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.6) 15%,
+                rgba(255, 255, 255, 0.85) 50%,
+                rgba(255, 255, 255, 0.6) 85%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            border-radius: 16px;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9))
+                    drop-shadow(0 0 15px rgba(255, 255, 255, 0.6))
+                    drop-shadow(0 0 25px rgba(255, 255, 255, 0.3));
+        }
+        
+        /* Center glow between tracks */
+        .center-glow {
+            position: absolute;
+            width: 90px;
+            height: 200px;
+            background: radial-gradient(
+                ellipse at center,
+                rgba(255, 255, 255, 0.12) 0%,
+                rgba(255, 255, 255, 0.04) 60%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            filter: blur(8px);
+        }
+    </style>
+</head>
+<body>
+    <div class="lane-container">
+        <div class="center-glow"></div>
+        <div class="lane">
+            <div class="track"></div>
+            <div class="track"></div>
+        </div>
+    </div>
+</body>
+</html>
